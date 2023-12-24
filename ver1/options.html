@@ -1,0 +1,233 @@
+
+
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="bg-image"></div>
+
+
+
+
+
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+</style>
+
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    font-family: "Arial", "Arial", monospace;
+  }
+</style>
+
+<style>
+  .bg-image {
+    /* The image used */
+    background-image: url("https://wallpaperaccess.com/full/3949372.jpg");
+
+    /* Add the blur effect */
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg-text {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+</style>
+
+<style>
+  h1 {
+
+    color: #FFFFFF;
+
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18;
+  }
+</style>
+
+<style>
+  h2 {
+    color: #FFFFFF;
+
+    text-shadow: 0 0 10px #FFFFFF;
+  }
+</style>
+
+<style>
+  p {
+    color: #FFFFFF;
+
+    text-shadow: 0 0 10px #FFFFFF;
+  }
+
+
+<style>
+  .bn6 {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #232423;
+    padding: 0.3em 1.2em;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    font-weight: 550;
+    color: #ffffff;
+    background-size: 100% 100%;
+    box-shadow: 0 0 0 4px #232423 inset;
+  }
+
+  .bn6:hover {
+    background-image: linear-gradient(55deg,
+        transparent 10%,
+        #161616 10% 20%,
+        transparent 20% 30%,
+        #161616 30% 40%,
+        transparent 40% 50%,
+        #161616 50% 60%,
+        transparent 60% 70%,
+        #161616 70% 80%,
+        transparent 80% 90%,
+        #161616 90% 100%);
+    animation: background 3s linear infinite;
+  }
+
+   a.nexus{
+   background: linear-gradient(to right,#9ef936 ,#535457);
+   background-color: #9ef936;
+   color: #fff;
+   font-family: Trebuchet MS;
+   font-size: 17px;
+   font-weight: 800;
+   font-style: italic;
+   text-decoration: none;
+   padding: 8px 26px;
+   border: 0px solid #000;
+   border-radius: 4px;
+   display: inline-block;
+  }
+  a.nexus:hover{
+   background: linear-gradient(to right,#aafa60 ,#717173);
+   background-color: #aafa60;
+  }
+  a.nexus:active{
+   transform: scale(0.95);
+  }
+  a.slt{
+   background: linear-gradient(to right,#9ef936 ,#535457);
+   background-color: #9ef936;
+   color: #fff;
+   font-family: Trebuchet MS;
+   font-size: 17px;
+   font-weight: 800;
+   font-style: italic;
+   text-decoration: none;
+   padding: 8px 15px;
+   border: 0px solid #000;
+   border-radius: 4px;
+   display: inline-block;
+  }
+  a.slt:hover{
+   background: linear-gradient(to right,#aafa60 ,#717173);
+   background-color: #aafa60;
+  }
+  a.slt:active{
+   transform: scale(0.95);
+  }
+  
+  a.festive{
+   background: linear-gradient(to right,#f0524d ,#8a0a06);
+   background-color: #9ef936;
+   color: #fff;
+   font-family: Trebuchet MS;
+   font-size: 17px;
+   font-weight: 800;
+   font-style: italic;
+   text-decoration: none;
+   padding: 8px 15px;
+   border: 0px solid #000;
+   border-radius: 4px;
+   display: inline-block;
+  }
+  a.festive:hover{
+   background: linear-gradient(to right,#aafa60 ,#717173);
+   background-color: #aafa60;
+  }
+  a.festive:active{
+   transform: scale(0.95);
+  }
+</style>
+
+<div class="bg-text">
+<img src="nexusSnarl.png" style="width:55px;height:50px;">
+  <h3>NEXUSSNARL©</h3>
+  <hr class="solid">
+  <h3 id="text"></h3>
+  <br>
+  <h4>Choose An Application:</h4>
+  <a href="#" onclick="ns()" class="nexus">NexusSnarl</a>
+  <br>
+  <br>
+  <a href="#" onclick="slt()" class="slt">SLT Assistance</a>
+  <br>
+  <br>
+  <h3>⬇ Limited Time Version ⬇</h3>
+  <a href="#" onclick="festive()" class="festive">NexusFestive</a>
+  
+</div>
+
+
+
+<script>
+
+  
+
+    
+  const queryString = window.location.search;
+  console.log(queryString);
+  strNew = queryString.replace("?user=", "");
+  
+
+    
+  function ns() {
+    window.location.replace('ns.html?user='+strNew);
+  }
+  function slt() {
+    window.location.replace('slt.html?user='+strNew);
+  }
+  function festive() {
+    window.location.replace('festive.html?user='+strNew);
+  }
+</script>
+
