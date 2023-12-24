@@ -1,0 +1,47 @@
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../cssFiles/all.css">
+<link rel="stylesheet" href="../cssFiles/profilePage.css">
+<script src="../java/goBack.js"></script>
+
+
+<div class="bg-image"></div>
+
+
+
+<div class="bg-text">
+  <img src="../images/nexusSnarl.png" style="width:55px;height:50px;" onclick="backClick()">
+  <h3>NEXUSSNARL©</h3>
+  <hr class="solid">
+  <h4 id="welcome">Hello, </h4>
+  <h3>You have:</h3>
+  <iframe id="getTokens" src="https://data.nafaneel.uk/tokens/tokensGet.html?user=null" scrolling="no" width="40%"
+    height="23" style="border:0px solid black;"></iframe><br>
+  <a class="update" href="#" onclick="getTokensB()">Click Here To Update</a>
+
+
+
+
+</div>
+
+<script>
+  const queryString = window.location.search;
+  console.log(queryString);
+  strNew = queryString.replace("?user=", "");
+  if (queryString == "") {
+    window.location.replace('error.html');
+  }
+  document.getElementById("welcome").innerHTML = "Hello, " + strNew;
+
+  document.getElementById('getTokens').src = "https://data.nafaneel.uk/tokens/tokensGet.html?user=" + strNew;
+
+  function getTokensB() {
+    document.getElementById('getTokens').src = "https://data.nafaneel.uk/tokens/tokensGet.html?user=" + strNew;
+  }
+
+</script>

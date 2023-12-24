@@ -1,0 +1,100 @@
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Arial", "Arial", monospace;
+}
+
+.bg-image {
+  /* The image used */
+  /* background-image: url("https://c.tenor.com/MeBby9_217UAAAAM/bruno-powroznik-mental.gif"); */
+
+  background-image: url("https://cdn.dribbble.com/users/707385/screenshots/3926398/4_1_2.gif"); 
+
+  /* background-image: url("https://cdn.dribbble.com/users/707385/screenshots/4135744/5_19_1.gif"); */
+
+
+  /* Add the blur effect */
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-text {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+
+  position: absolute;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 60%;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+
+  background-color: #FFFFFF;
+
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18;
+}
+
+h3 {
+  color: #FFFFFF;
+
+  text-shadow: 0 0 10px #4095bf;
+}
+
+p {
+  color: #FFFFFF;
+
+  text-shadow: 0 0 10px #FFFFFF;
+}
+
+
+
+a.send{
+ background: linear-gradient(to right,#19ca1d ,#12ac0c);
+ background-color: #19ca1d;
+ color: #fff;
+ font-family: Verdana;
+ font-size: 14px;
+ font-weight: 800;
+ font-style: italic;
+ text-decoration: none;
+ padding: 7px 33px;
+ border: 0px solid #000;
+ border-radius: 4px;
+ display: inline-block;
+ box-shadow: 0px 0px 10px 0px #2D2D2D;
+ text-shadow: 0px 2px 0px #000;
+}
+a.send:hover{
+ background: linear-gradient(to right,#54d055 ,#52b651);
+ background-color: #54d055;
+}
+a.send:active{
+ transform: scale(0.75);
+}
