@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>List Items</title>
+  </head>
+  <body>
+    <ul id="list">
+    </ul>
+
+    <script>
+      const list = ['09:30:00 fony_solo', '10:25:00 final', '10:27:00 choke', '11:30:00 fony1', '12:30:00 lousyfaggot', '12:45:00 slutonjunk', '13:30:00 fony_solo', '14:30:00 final', '14:45:00 burp'];
+
+      var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", "sequencer.txt", false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                  const allText = rawFile.responseText;
+                  alert(allText);
+                  const ul = document.getElementById('list');
+
+                  allText.forEach((item) => {
+                    alert(item);
+                    const li = document.createElement('li');
+                    li.innerHTML = item;
+                    ul.appendChild(li);
+                  });
+                    
+                }
+            }
+        }
+        rawFile.send(null);
+      
+      
+    </script>
+  </body>
+</html>

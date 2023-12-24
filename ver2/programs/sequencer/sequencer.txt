@@ -1,0 +1,1 @@
+['09:10:00 nokia1\n', '10:30:00 laugh3\n', '11:00:00 laugh\n', '12:00:00 burp\n', '13:15:00 hugeanus\n', '14:35:00 inverse\n', '13:35:00 pretend\n', '13:45:00 rfl\n', '13:55:00 sterling\n', '14:30:00 bigman\n', '14:45:00 laugh\n']

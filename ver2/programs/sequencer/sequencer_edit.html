@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="../../java/goBack.js"></script>
+<html>
+  <head>
+    <link rel="stylesheet" href="sequencer.css">
+    <script>
+      function formatString() {
+        //var input = "['09:30:00 fony_solo\n', '10:25:00 final\n', '10:27:00 choke\n', '11:30:00 fony1\n', '12:30:00 lousyfaggot\n', '12:45:00 slutonjunk\n', '13:30:00 fony_solo\n', '14:30:00 final\n', '14:45:00 burp\n']";
+
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", "sequencer.txt", false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var input = rawFile.responseText;
+                    input = input.replace(/\['/g, "");  // remove opening brackets
+                    input = input.replace(/\\n/g, "");
+                    input = input.replace(/'\, /g, "<br>"); // replace comma + space with new line
+                    input = input.replace(/\']/g, "");  // remove closing brackets
+            
+                    document.getElementById("output").innerHTML = input;
+                }
+            }
+        }
+        rawFile.send(null);
+        
+      }
+    </script>
+
+  </head>
+  <body onload="formatString()">
+    <div class="bg-image"></div>
+    <div class="bg-text">
+      <img src="../../images/nexusSnarl.png" style="width:55px;height:50px;" onclick="backClick()">
+      <h3>NEXUSSNARL©</h3>
+      <hr class="solid">
+      <h5 id="time"></h5>
+      <h4><center>CURRENT TIMES:</center></h4>
+      <div class="sequence">
+        <h5 id="output"></h5>
+      </div>
+      <br>
+      <div class="edit">
+        <label><b><i>ADD OR REMOVE TIME & SOUND</i></b></label><br>
+        <span><input id="timeBox" class="box" type=text placeholder="TIME"><input id="sound" class="box" type=text placeholder="SOUND"></span>
+          <br>
+          <br>
+          <a class="add" href="#" onclick="add()">ADD SEQ</a>
+          <br>
+          <br>
+          <a class="take" href="#" onclick="remove()">REMOVE SEQ</a>
+          <br>
+          <br>
+          <a class="check" href="#" onclick="clearList()">CLEAR SEQ</a>
+          <br>
+        <br>
+      </div>
+      <h6>Nafaneel | 05/02/23</h6>
+    </div>
+    
+  </body>
+</html>
+
+<script>
+  function refreshTime() {
+    const timeDisplay = document.getElementById("time");
+    const dateString = new Date().toLocaleString();
+    const formattedString = dateString.replace(", ", " - ");
+    timeDisplay.textContent = formattedString;
+  }
+  setInterval(refreshTime, 1000);
+
+
+  function nexusSwitchSend(textSend) {
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1062394405690036236/zcrdBWSJt3wpCsNbn2BGaEIrFL_ggOVTrWGa39CUz41CEXEkJeW4OkbIuo8pQYOKcesk");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    const params = {
+      username: "NexusSnarl - Webhook POST",
+      content: "++" + textSend,
+    }
+
+    request.send(JSON.stringify(params));
+    alert("Request Sent");
+  }
+  function add() {
+    var timeGet = document.getElementById("timeBox").value;
+    var sound = document.getElementById("sound").value;
+    alert('~~seq add '+timeGet+' '+sound);
+    nexusSwitchSend('~~seq add '+timeGet+' '+sound);
+    location.reload();
+  }
+  function remove() {
+    var timeGet = document.getElementById("timeBox").value;
+    var sound = document.getElementById("sound").value;
+    nexusSwitchSend('~~seq remove "'+timeGet+' '+sound+'" 0');
+    location.reload();
+  }
+  function clearList() {
+    nexusSwitchSend("~~seq clear 0 0");
+    location.reload();
+  }
+</script>

@@ -1,0 +1,64 @@
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../cssFiles/all.css">
+<link rel="stylesheet" href="../cssFiles/profilePage.css">
+<script src="../java/goBack.js"></script>
+
+
+<div class="bg-image"></div>
+
+
+
+<div class="bg-text">
+<img src="../images/nexusSnarl.png" style="width:55px;height:50px;" onclick="backClick()">
+  <h3>NEXUSSNARL©</h3>
+  <hr class="solid">
+  <h4 id="welcome">Hello, </h4>
+  <h3>You have:</h3>
+  <h2 id="remaining">0 Tokens</h2>
+  <a class="update" href="#" onclick="getTokens()">Click Here To Update</a>
+  
+  
+
+  
+</div>
+
+<script>
+  const queryString = window.location.search;
+  console.log(queryString);
+  strNew = queryString.replace("?user=", "");
+  if(queryString=="") {
+    window.location.replace('error.html');
+  } 
+  document.getElementById("welcome").innerHTML = "Hello, "+strNew;
+  getTokens();
+  //document.getElementById("welcome").innerHTML = "Hello, "+strNew;
+  
+  
+  function getTokens() {
+    fileVar = "../tokens/"+strNew+".txt"
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", fileVar, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                responseText = strNew +" You have "+allText+" Tokens remaining!";
+                //alert(responseText);
+                
+                document.getElementById("remaining").innerHTML = allText + "Tokens";
+              return allText;
+            }
+        }
+    }
+    rawFile.send(null);
+  }  
+</script>

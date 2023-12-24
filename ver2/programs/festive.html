@@ -1,0 +1,240 @@
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="bg-image"></div>
+
+
+
+<script>
+
+</script>
+
+
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+</style>
+
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    font-family: "Arial", "Arial", monospace;
+  }
+</style>
+
+<style>
+  .bg-image {
+    /* The image used */
+    background-image: url("https://t3.ftcdn.net/jpg/01/81/06/88/360_F_181068823_GaxiM2hV8c8vNc4OlFEJmK4GhM6tovhu.jpg");
+
+    /* Add the blur effect */
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg-text {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+</style>
+
+<style>
+  h1 {
+
+    color: #FFFFFF;
+
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+  }
+</style>
+
+<style>
+  h2 {
+    color: #FFFFFF;
+
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #ff0000, 0 0 30px #ff0000;
+  }
+</style>
+
+<style>
+  p {
+    color: #FFFFFF;
+
+    text-shadow: 0 0 10px #FFFFFF;
+  }
+
+
+<style>
+  .bn6 {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #232423;
+    padding: 0.3em 1.2em;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    font-weight: 550;
+    color: #ffffff;
+    background-size: 100% 100%;
+    box-shadow: 0 0 0 4px #232423 inset;
+  }
+
+  .bn6:hover {
+    background-image: linear-gradient(55deg,
+        transparent 10%,
+        #161616 10% 20%,
+        transparent 20% 30%,
+        #161616 30% 40%,
+        transparent 40% 50%,
+        #161616 50% 60%,
+        transparent 60% 70%,
+        #161616 70% 80%,
+        transparent 80% 90%,
+        #161616 90% 100%);
+    animation: background 3s linear infinite;
+  }
+</style>
+
+<div class="bg-text">
+<img src="../images/christmas_jane.png" style="width:80px;height:80px;">
+  <h3>NEXUSSNARL©</h3>
+  <hr class="solid">
+  <h5 id="welcome"></h5>
+  <label position=center for="sounds"><h2>Choose A Festive Sound:</h2></label>
+
+  <div class="custom-select" style="width:320px;">
+    <center><select position=center id="sounds" position=center>
+      <option selected disabled>STEVEN DAWSON</option>
+      <option value="1">aiwfc1</option>
+      <option value="2">aiwfc2</option>
+      <option value="3">fony1</option>
+      <option value="4">fony2</option>
+      <option value="5">fony3</option>
+      <option value="6">lousyfaggot</option>
+      <option value="7">slutonjunk</option>
+      <option value="8">fony_solo</option>
+      <option value="9">final</option>
+    </select></center>
+  </div>
+
+  <br>
+  <b>Delay(s) </b><input class="entryBox" type=text id="testTest" width="1" maxlength="3" size="3" value="0">
+  <br>
+  <h3 style="color: #ff0000">Cost =  1 x Token</h3>
+  <h5>This current version doesn't feature a live token count linked to your Discord account!</h5>
+  <h4 style="color: #ff0000;" id="tokensUsed">Tokens Used: None</h4>
+  <a class="send" onclick="test()" href="#">SEND COMMAND</a>
+  <h5>Nafaneel | Ver: 1.0 | 16/12/22</h5>
+</div>
+
+<style>
+  a.send{
+   background: linear-gradient(to right,#b52722 ,#8a0a06);
+   background-color: #afca19;
+   color: #fff;
+   font-family: Arial;
+   font-size: 18px;
+   font-weight: 800;
+   font-style: italic;
+   text-decoration: none;
+   padding: 5px 15px;
+   border: 0px solid #000;
+   border-radius: 3px;
+   display: inline-block;
+  }
+  a.send span{
+   margin-right: 15px;
+   display: block;
+   width: 29px;
+   height: 29px;
+   background-image: url("nexusSnarl.png");
+   background-repeat: no-repeat;
+   background-size: contain;
+   transform: rotate(0deg);
+  }
+  a.send:hover{
+   background: linear-gradient(to right,#b5fc58 ,#9bf723);
+   background-color: #b9d054;
+  }
+  a.send:active{
+   transform: scale(0.95);
+  }
+</style>
+
+<script>
+  var clicks = 0;
+  function sendMessage(testSend) {
+    
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1062394405690036236/zcrdBWSJt3wpCsNbn2BGaEIrFL_ggOVTrWGa39CUz41CEXEkJeW4OkbIuo8pQYOKcesk");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    const params = {
+      username: "NexusSnarl - Webhook POST",
+      avatar_url: "",
+      content: "++" + testSend,
+    }
+
+    request.send(JSON.stringify(params));
+    clicks += 1;
+    alert("Request For Sound Sent! \n- This Has Deducted 1 Token from Your Balance. \n- Used Tokens: "+clicks)
+    document.getElementById("tokensUsed").innerHTML = "Tokens Used: "+clicks;
+  }
+  
+</script>
+
+
+<script>
+  const queryString = window.location.search;
+  console.log(queryString);
+  strNew = queryString.replace("?user=", "");
+  if(queryString=="") {
+    window.location.replace('https://ns.nafaneel.repl.co/error.html');
+  } 
+  document.getElementById("welcome").innerHTML = "Hello, "+strNew;
+  function test() {
+    //alert("hello")
+    var e = document.getElementById("sounds");
+    var value = e.value;
+    var text = e.options[e.selectedIndex].text;
+    var delay = document.getElementById("testTest").value;
+    //alert("~"+text+" "+delay)
+    sendMessage("~webActivate "+ strNew +" "+ text +" "+delay)
+    //sendDis()
+  }
+</script>
+
+<style>
+
+</style>

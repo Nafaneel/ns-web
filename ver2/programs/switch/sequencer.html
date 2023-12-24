@@ -1,0 +1,17 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<input id="settime" type="time" step="1" /><select position=center id="sounds"><option value="1">ahh</option></select><button onclick="get()">ADD</button>
+
+
+
+<script>
+  function get() {
+    time = document.getElementById("settime").value;
+    var e = document.getElementById("sounds");
+    var value = e.value;
+    var text = e.options[e.selectedIndex].text;
+    alert("~~add "+time+" "+text);
+  }
+  
+</script>

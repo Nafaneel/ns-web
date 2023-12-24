@@ -1,0 +1,33 @@
+
+<center><select position=center id="folder" position=center class="selectBox">
+ <option disabled>FOLDER OPTION</option>
+  <option>Becky BROWN</option>
+  <option>John WINGROVE</option>
+  <option>Nick GOLDING</option>
+  <option>Jayne DAVIES</option>
+</select></center>
+
+<button onclick="hide()">Update Selection</button>
+
+<center><select position=center id="all" position=center class="selectBox">
+  <div id="Becky BROWN">
+    <option>Doing Removal</option>
+    <option>Hi Nick</option>
+    <option>Its Becky</option>
+    <option>Nick Ruotr</option>
+    <option>Thank You Miss</option>
+    <option>Ty OMW</option>
+  </div>
+  <option >Wingrove Radio check
+</select></center>
+
+<script>
+  function hide() {
+    //document.getElementById("Becky BROWN").style.visibility="hidden";
+    document.getElementById("Becky BROWN").outerHTML = "";
+  }
+  
+  function update() {
+    document.getElementById("RUOTR").style.visibility="hidden";
+  }
+</script>

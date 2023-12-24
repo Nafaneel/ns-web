@@ -1,0 +1,28 @@
+<p id="display"></p>
+
+
+<script>
+  var rawFile = new XMLHttpRequest();
+  rawFile.open("GET", "sequencer.txt", false);
+  rawFile.onreadystatechange = function ()
+  {
+      if(rawFile.readyState === 4)
+      {
+          if(rawFile.status === 200 || rawFile.status == 0)
+          {
+              var allText = rawFile.responseText;
+              alert(allText);
+              const sounds = allText.split(' ');
+              alert(sounds);
+          }
+      }
+  }
+  rawFile.send(null);
+
+  
+  
+  document.getElementById("display").innerHTML = formattedText;
+  prompt(formattedText)
+  
+
+</script>

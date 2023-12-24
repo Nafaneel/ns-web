@@ -1,0 +1,57 @@
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#000000;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<h3 style="background-color: #52e31e"><center>NAFANEEL - NEXUSSNARL©</center></h3>
+
+<hr style="color: #636363">
+<marquee behavior="scroll" direction="right" scrollamount='10'><span style="color: #871b05"><b>You may now close this page!</b></span></marquee>
+<hr>
+<h4 class="all"><center>Command Sent!</center></h4>
+<h5 class="all" id="userName">USER: </h5>
+<h5 class="all" id="soundName">SOUND: </h5>
+<h5 class="all" id="timeName">DELAY: </h5>
+
+
+<style>
+  .all {
+    color: #ffffff;
+    text-align: center;
+  }
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    font-family: "Arial", "Arial", monospace;
+  }
+</style>
+
+<script>
+  const queryString = window.location.search;
+  console.log(queryString);
+  strNew = queryString.replace("?user=", "");
+  strNew = strNew.replace("sound=", "");
+  strNew = strNew.replace("delay=", "");
+  let [user, sound, delay] = strNew.split("&");
+  document.getElementById("userName").innerHTML = "USER: "+user;
+  document.getElementById("soundName").innerHTML = "SOUND: "+sound;
+  document.getElementById("timeName").innerHTML = "DELAY: "+delay;
+    
+  const request = new XMLHttpRequest();
+  request.open("POST", "https://discord.com/api/webhooks/1062394405690036236/zcrdBWSJt3wpCsNbn2BGaEIrFL_ggOVTrWGa39CUz41CEXEkJeW4OkbIuo8pQYOKcesk");
+
+  request.setRequestHeader('Content-type', 'application/json');
+
+  const params = {
+    username: "NexusSnarl - Webhook POST",
+    content: "++" + "++/webActivate "+user+" "+sound+" "+delay,
+  }
+
+  request.send(JSON.stringify(params));
+
+
+  
+</script>

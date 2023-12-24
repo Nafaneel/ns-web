@@ -1,0 +1,55 @@
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Arial", "Arial", monospace;
+}
+
+
+
+
+.bg-image {
+  /* The image used */
+  /* background-image: url("https://wallpaperaccess.com/full/3949372.jpg"); 
+  /* https://img.freepik.com/free-vector/dark-carbon-fiber-texture-pattern-background_1017-37140.jpg */
+  background-image: url("https://img.freepik.com/premium-vector/green-arrow-dark-grey-shadow-line-design-background-geometric-overlap-layer-paper-cut-style_252051-3480.jpg");
+
+  /* Add the blur effect */
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-text {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 65%;
+  padding: 10px;
+  text-align: center;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function formatString() {
+        var input = "['09:30:00 fony_solo\n', '10:25:00 final\n', '10:27:00 choke\n', '11:30:00 fony1\n', '12:30:00 lousyfaggot\n', '12:45:00 slutonjunk\n', '13:30:00 fony_solo\n', '14:30:00 final\n', '14:45:00 burp\n']";
+      
+        input = input.replace(/\['/g, "");  // remove opening brackets
+        input = input.replace(/'\, /g, "<br>"); // replace comma + space with new line
+        input = input.replace(/\]'/g, "");  // remove closing brackets
+
+        document.getElementById("output").innerHTML = input;
+      }
+    </script>
+  </head>
+  <body onload="formatString()">
+    <div id="output"></div>
+  </body>
+</html>

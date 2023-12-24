@@ -1,0 +1,174 @@
+<title>Nafaneel</title>
+<link rel="icon" type="image/x-icon" href="../images/jane.png">
+
+<body style="background-color:#232323;"></body>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="bg-image"></div>
+
+<link rel="stylesheet" href="../cssFiles/copycat_becky.css">
+<link rel="stylesheet" href="c0pycat/copycat_styles.css">
+
+<div class="bg-text">
+<img id="logo" src="../images/nexusSnarl.png" style="width:55px;height:50px;" onclick="backClick()">
+  <h3>NEXUSSNARL©</h3>
+  <hr class="solid">
+  <h3>Select Folder:</h3>
+  
+  <center><select position=center id="folder" position=center class="selectBox">
+   <option disabled>FOLDER OPTION</option>
+    <option>Becky BROWN</option>
+    <option>John WINGROVE</option>
+    <option>Nick GOLDING</option>
+    <option>Jayne DAVIES</option>
+  </select></center>
+  
+  <br>
+  
+  <a class="updateBox" href="#" onclick="update()">UPDATE SELECTION</a>
+  <h3 id="msg">Select Sound From ↖</h3>
+  
+  <center><select position=center id="Becky BROWN" position=center class="selectBox">
+      <option disabled>Becky BROWN</option>
+      <option disabled>Doing Removal</option>
+      <option disabled>Hi Nick</option>
+      <option disabled>Its Becky</option>
+      <option>Nick Ruotr</option>
+      <option>Thank You Miss</option>
+      <option>Ty OMW</option>
+      <option>I Can Come
+      <option>Ok OMW</option>
+  </select></center>
+  
+ <center><select position=center id="John WINGROVE" position=center class="selectBox">
+      <option disabled>John WINGROVE</option>
+      <option>Radio Check</option>
+      <option>Radio Check2</option>
+      <option>Go Ahead</option>
+      <option>OMW</option>
+      <option>Walsh RUOTR</option>
+  </select></center>
+
+ <center><select position=center id="Nick GOLDING" position=center class="selectBox">
+      <option disabled>Nick GOLDING</option>
+      <option>Hello Hello Hello</option>
+      <option>Morning</option>
+      <option>Repeat That</option>
+      <option>Morning John</option>
+      <option>Nick here</option>
+      <option>two minutes</option>
+      <option>Great Ty</option>
+      <option>Hello</option>
+  </select></center>
+
+  <center><select position=center id="Jayne DAVIES" position=center class="selectBox">
+      <option disabled>Jayne DAVIES</option>
+      <option disabled>Inclusion Assistance</option>
+      <option>Toilet Run</option>
+  </select></center>
+  
+  <br>
+  <br>
+  <a href="#" onclick="getTokens()" style="color: #adf542;" id="tokensRemainingButton">Remaining Tokens: 0</a>
+  <br>
+  <b>Delay(s) </b><input class="box" type=text id="delayBox" width="1" maxlength="3" size="3" value="0">
+  <br>
+  <br>
+  <a class="send" href="#" onclick="preSend()">📶 SEND COMMAND</a>
+  </div>
+
+
+  
+
+
+
+<script>
+  function hideAll() {
+    document.getElementById("Becky BROWN").style.visibility="hidden";
+    document.getElementById("John WINGROVE").style.visibility="hidden";
+    document.getElementById("Nick GOLDING").style.visibility="hidden";
+    document.getElementById("Jayne DAVIES").style.visibility="hidden";
+  }
+  hideAll();
+  function update() {
+    hideAll();
+    var e = document.getElementById("folder");
+    var value = e.value;
+    var text = e.options[e.selectedIndex].text;
+    document.getElementById("msg").innerHTML = "Select Sound From " + text;
+    document.getElementById(text).style.visibility="visible";
+    var loc = "../images/"+text+".png";
+    document.getElementById('logo').src = loc;
+  }
+  function sendMessage(testSend) {
+    
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1062394405690036236/zcrdBWSJt3wpCsNbn2BGaEIrFL_ggOVTrWGa39CUz41CEXEkJeW4OkbIuo8pQYOKcesk");
+  
+    request.setRequestHeader('Content-type', 'application/json');
+  
+    const params = {
+      username: "NexusSnarl - Webhook",
+      content: "++" + testSend,
+    }
+  
+    request.send(JSON.stringify(params));
+    alert("Request For Sound Sent!");
+  }
+  
+  
+  //document.getElementById("sounds").style.visibility="hidden";
+  document.getElementById("sounds").style.visibility="visible";
+  getTokens();
+  function getTokens() {
+    const queryString = window.location.search;
+    console.log(queryString);
+    strNew = queryString.replace("?user=", "");
+  
+    fileVar = "../tokens/"+strNew+".txt"
+    
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", fileVar, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                responseText = strNew +" You have "+allText+" Tokens remaining!";
+                //alert(responseText);
+                
+                document.getElementById("tokensRemainingButton").innerHTML = "Tokens Remaining: "+allText;
+              return allText;
+            }
+        }
+    }
+    rawFile.send(null);
+  }
+  function preSend() {
+    const queryString = window.location.search;
+    console.log(queryString);
+    strNew = queryString.replace("?user=", "");
+    var e = document.getElementById("folder");
+    var value = e.value;
+    var text = e.options[e.selectedIndex].text; 
+    var delay = document.getElementById("delayBox").value;
+
+    
+    
+    var soundFile = document.getElementById(text);
+    var soundValue = soundFile.value;
+    var Sound_val = soundFile.options[soundFile.selectedIndex].text; 
+    sendMessage("/library "+ strNew +' "'+ text +'" "'+Sound_val +'" '+delay);
+
+      
+
+ 
+  
+  } 
+</script>
+
+
+<script src="/java/goBack.js"></script>
